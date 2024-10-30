@@ -5,10 +5,12 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
 
 import static com.senla.finance.starter.utils.Constants.SERVICE;
 
 @Aspect
+@Component
 public class ServiceLoggingAspect extends LoggingAspect {
     @Before(value = "com.senla.finance.starter.aspect.SystemArchitecture.inServices()")
     public void logServiceCall(JoinPoint joinPoint) {
