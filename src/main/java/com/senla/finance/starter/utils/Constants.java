@@ -1,6 +1,10 @@
 package com.senla.finance.starter.utils;
 
 import lombok.experimental.UtilityClass;
+import org.springframework.beans.factory.annotation.Value;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @UtilityClass
 public class Constants {
@@ -15,4 +19,8 @@ public class Constants {
     public static final String CONTROLLER = "controller";
     public static final String SERVICE = "service";
     public static final String DAO = "dao";
+
+    @Value("${properties.to.mask}")
+    public static final List<String> PROPERTIES_TO_MASK = new ArrayList<>();
+
 }

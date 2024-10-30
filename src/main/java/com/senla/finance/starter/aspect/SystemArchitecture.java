@@ -7,13 +7,14 @@ import org.aspectj.lang.annotation.Pointcut;
 public class SystemArchitecture {
 
     @Pointcut("within(@com.senla.finance.starter.annotations.LogController *)")
-    public void inControllers() {}
+    public void inControllers() {
+    }
 
-    @Pointcut("within(@com.senla.finance.starter.annotations.ServiceController *)")
+    @Pointcut("within(@com.senla.finance.starter.annotations.LogService *)")
     public void inServices() {
     }
 
-    @Pointcut("within(@com.senla.finance.starter.annotations.DaoController *)")
+    @Pointcut("within(@com.senla.finance.starter.annotations.LogDao *)")
     public void inDao() {
     }
 }

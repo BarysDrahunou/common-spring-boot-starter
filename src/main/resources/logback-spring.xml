@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="Basic"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %cyan(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1}): %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <appender name="LoggingAppender"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="com.senla.finance.starter.utils.PasswordMaskingPatternLayout">
+            <pattern>
+                %red(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1}): %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="Basic"/>
+    </root>
+
+    <logger name="com.senla.finance.starter.aspect.LoggingAspect" additivity="false" level="debug">
+        <appender-ref ref="LoggingAppender"/>
+    </logger>
+</configuration>
