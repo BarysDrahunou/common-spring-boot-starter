@@ -19,7 +19,7 @@ public class Constants {
     public static final String SERVICE = "service";
     public static final String DAO = "dao";
 
-    @Value("${properties.to.mask}")
-    public static List<String> PROPERTIES_TO_MASK;
+    //@Value("${properties.to.mask}")
+    public static List<String> PROPERTIES_TO_MASK = List.of("abc","xyz");
 
 }
