@@ -5,12 +5,10 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.stereotype.Component;
 
 import static com.senla.finance.starter.utils.Constants.DAO;
 
 @Aspect
-@Component
 public class DaoLoggingAspect extends LoggingAspect {
     @Before(value = "com.senla.finance.starter.aspect.SystemArchitecture.inDao()")
     public void logDaoCall(JoinPoint joinPoint) {
